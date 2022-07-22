@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    body {
+      height: auto;
+      width: 90%;
+      margin: auto;
+    }
+
+    body > div {
+      display: flex;
+      justify-content: space-evenly;
+      width: 95%;
+      height: 95%;
+    }
+
+    #container {
+      width: 85%;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: auto;
+      gap: 2%;
+    }
+
+    h1 {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      color: gray;
+      font-size: medium;
+    }
+
+    p {
+      text-align: end;
+    }
+
+    button {
+      background-color: rgb(93, 142, 44);
+      color: white;
+      border: 0;
+      padding: 3%;
+    }
+
+    h4 {
+      color: gray;
+      font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+        "Lucida Sans", Arial, sans-serif;
+    }
+
+    #left {
+      padding: 1%;
+    }
+
+    #left > select {
+      display: block;
+      margin-bottom: 10%;
+    }
+
+    #container > div {
+      box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
+    }
+
+    img {
+      width: 200px;
+      height: 200px;
+    }
+
+    /* Medium Screens */
+    @media all and (min-width: 768px) and (max-width: 1024px) {
+      body {
+        width: 90%;
+        margin: auto;
+      }
+      #container {
+        width: auto;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+        gap: 1%;
+      }
+      body > div {
+        display: grid;
+        width: 90%;
+      }
+    }
+
+    /* Small Screens */
+    @media all and (min-width: 320px) and (max-width: 767px) {
+      body {
+        width: 90%;
+        margin: auto;
+      }
+      #container {
+        width: auto;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: auto;
+        gap: 1%;
+      }
+      body > div {
+        display: grid;
+        width: 90%;
+      }
+      #left > select {
+        display: flex;
+        margin: auto;
+      }
+    }
+  </style>
+  <body>
+    <div id="container"></div>
+    <div>
+      <h1>Total Cart Value:- <span id="spanID">0</span></h1>
+    </div>
+  </body>
+</html>
+
+<script>
+  // console.log(product_data)
+  let container = document.getElementById("container");
+
+  let cartLS = JSON.parse(localStorage.getItem("cart-page")) || [];
+
+  let totalPrice = document.querySelector("#spanID");
+
+  function display(product_data) {
+    container.innerHTML = "";
+    let total = 0;
+    product_data.forEach(function (elem, index) {
+      total += Number(elem.price);
+      let product = document.createElement("div");
+      let img = document.createElement("img");
+      img.setAttribute("src", elem.img);
+
+      let name = document.createElement("h1");
+      name.innerText = elem.name;
+
+      let rating = document.createElement("button");
+      rating.innerText = elem.rating;
+
+      let price = document.createElement("h3");
+      price.innerText = elem.price;
+
+      let discount = document.createElement("p");
+      discount.innerText = elem.discount;
+
+      let line = document.createElement("hr");
+
+      let deleteBtn = document.createElement("button");
+      deleteBtn.innerText = "Delete";
+      deleteBtn.addEventListener("click", function () {
+        deleteCart(elem);
+      });
+
+      product.append(img);
+      product.append(name, rating, price, discount, line, deleteBtn);
+      container.append(product);
+    });
+    totalPrice.innerText = total;
+  }
+
+  function deleteCart(elem, index) {
+    cartLS.splice(index, 1);
+    localStorage.setItem("cart-page", JSON.stringify(cartLS));
+    display(cartLS);
+  }
+
+  display(cartLS);
+</script>
