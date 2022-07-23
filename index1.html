@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trending Page</title>
+  </head>
+  <style>
+    body {
+      height: auto;
+      width: 90%;
+      margin: auto;
+    }
+
+    body > div:nth-child(2) {
+      display: flex;
+      justify-content: space-evenly;
+      width: 95%;
+      height: 95%;
+    }
+
+    #container {
+      width: 85%;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: auto;
+      gap: 2%;
+    }
+
+    h1 {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      color: gray;
+      font-size: medium;
+    }
+
+    p {
+      text-align: end;
+    }
+
+    button {
+      background-color: rgb(93, 142, 44);
+      color: white;
+      border: 0;
+      padding: 3%;
+    }
+
+    h4 {
+      color: gray;
+      font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+        "Lucida Sans", Arial, sans-serif;
+    }
+
+    #left {
+      padding: 1%;
+    }
+
+    #left > select {
+      display: block;
+      margin-bottom: 10%;
+    }
+
+    #container > div {
+      box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
+    }
+
+    img {
+      width: 200px;
+      height: 200px;
+    }
+
+    #header_top {
+      display: flex;
+      justify-content: space-evenly;
+    }
+    #header_img {
+      width: 150px;
+      height: 75px;
+    }
+    p {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      color: rgb(93, 90, 90);
+    }
+
+    .header_bottom_menu {
+      color: rgb(73, 73, 73);
+      font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+      text-decoration: none;
+      margin: auto;
+      margin-left: 3%;
+    }
+
+    #footer {
+      margin: auto;
+      margin-top: 1%;
+      background-color: rgb(235, 229, 229);
+      display: flex;
+      justify-content: space-around;
+    }
+
+    #footer {
+      margin-top: 10%;
+    }
+    #footer > div {
+      width: 60%;
+      font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+      font-size: small;
+      color: rgb(53, 51, 51);
+    }
+
+    #footer > div > p {
+      text-align: left;
+    }
+    #footer > div > img {
+      margin-top: 40%;
+      width: 100%;
+    }
+
+    #footer > div > h5 {
+      color: rgb(255, 132, 0);
+      font-size: large;
+      margin-bottom: -1%;
+    }
+
+    /* Medium Screens */
+    @media all and (min-width: 768px) and (max-width: 1024px) {
+      body {
+        width: 90%;
+        margin: auto;
+      }
+      #container {
+        width: auto;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+        gap: 1%;
+      }
+      body > div {
+        display: grid;
+        width: 90%;
+      }
+      #left > select {
+        display: flex;
+        margin: auto;
+      }
+
+      #footer {
+        margin-top: 10%;
+        width: 85%;
+        display: grid;
+        grid-template-columns: repeat(2, 40%);
+        grid-template-rows: auto;
+      }
+    }
+
+    /* Small Screens */
+    @media all and (min-width: 320px) and (max-width: 767px) {
+      body {
+        width: 90%;
+        margin: auto;
+      }
+      #container {
+        width: auto;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: auto;
+        gap: 1%;
+      }
+      body > div {
+        display: grid;
+        width: 90%;
+      }
+      #left > select {
+        display: flex;
+        margin: auto;
+      }
+
+      #footer {
+        margin-top: 20%;
+        width: 85%;
+        display: grid;
+        grid-template-columns: repeat(2, 40%);
+        grid-template-rows: auto;
+      }
+    }
+  </style>
+
+  <body>
+    <div id="header">
+      <div id="header_top">
+        <div>
+          <img
+            id="header_img"
+            src="https://d64lkarmo2mrq.cloudfront.net/baselogo.png"
+            alt=""
+          />
+        </div>
+
+        <div>
+          <input
+            type="text"
+            placeholder="Search"
+            style="padding: 3%; width: 150%; margin-top: 15%; margin-left: -50%"
+          />
+        </div>
+
+        <div>
+          <p>
+            Seller's Corner | Feedback | Blog | Delivery Info |
+            <a style="color: blue; text-decoration: none" href="./cart.html"
+              >Cart</a
+            >
+          </p>
+        </div>
+      </div>
+
+      <div id="header_bottom">
+        <a href="" class="header_bottom_menu">Categories</a>
+        <a href="" class="header_bottom_menu">Flash Sale</a>
+        <a href="" class="header_bottom_menu">Best Deals</a>
+        <a href="./index1.html" class="header_bottom_menu" style="color: blue"
+          >Trending</a
+        >
+        <a href="" class="header_bottom_menu">New Arrivals </a>
+      </div>
+    </div>
+
+    <div>
+      <div id="left">
+        <h2>FILTER</h2>
+        <select id="filter">
+          <option value="">Select the category</option>
+          <option value="watch">Watch</option>
+          <option value="womenMakeup">Women Makeup</option>
+          <option value="bluetoothEarphone">Bluetooth Earphone</option>
+        </select>
+      </div>
+
+      <div id="container"></div>
+    </div>
+
+    <div id="footer">
+      <div>
+        <h5>Our Policies</h5>
+        <p>Covid-19 Precautions</p>
+        <p>Our Promise</p>
+        <p>Terms & Conditions</p>
+        <p>Customer tarrifs and fees</p>
+        <p>Privacy Policy</p>
+      </div>
+      <div>
+        <h5>Corporate</h5>
+        <p>Sell with us</p>
+        <p>Carrer Opportunities</p>
+        <p>Our Blog</p>
+        <p>Sitemap</p>
+      </div>
+      <div>
+        <h5>Help</h5>
+        <p>How MeanBuy works</p>
+        <p>My orders</p>
+        <p>Exchanges, Returns and Refunds</p>
+        <p>Contact Us</p>
+        <p>FAQ</p>
+      </div>
+      <div>
+        <h5>States Covered</h5>
+        <p>Tamil Nadu</p>
+        <p>Karnataka</p>
+        <p>Mahrashtra</p>
+        <p>Kerala</p>
+        <p>West Bengal</p>
+        <p>Telangana</p>
+        <p>Andhra Pradesh</p>
+      </div>
+      <div>
+        <h5>Sell with us</h5>
+        <p>General Information</p>
+        <p>Signup</p>
+      </div>
+      <div>
+        <img
+          src="https://www.nicepng.com/png/full/110-1105871_our-payment-methods-secure-payment-by-paypal-png.png"
+          alt=""
+        />
+      </div>
+    </div>
+  </body>
+</html>
+
+<script>
+  product_data = [
+    {
+      name: "Dual Movt Quartz Wristwatch",
+      price: "1899",
+      rating: "4.2/5★",
+      discount: "UP TO 27% OFF",
+      category: "watch",
+      img: "https://dbnzj30o7hucx.cloudfront.net/eyJidWNrZXQiOiJtZWFuYnV5LWltYWdlcyIsImtleSI6IjMyOTU3XC9CbGFja19uXzFfMS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjEwMDAsImhlaWdodCI6MTAwMCwiZml0IjoiY29udGFpbiIsImJhY2tncm91bmQiOnsiciI6MjU1LCJnIjoyNTUsImIiOjI1NSwiYWxwaGEiOjF9fX19",
+    },
+    {
+      name: "Women ZX19 Smart Wristwatch",
+      price: "5499",
+      rating: "4.6/5★",
+      discount: "UP TO 45% OFF",
+      category: "watch",
+      img: "https://dbnzj30o7hucx.cloudfront.net/eyJidWNrZXQiOiJtZWFuYnV5LWltYWdlcyIsImtleSI6IjMyMzg0XC9Hb2xkX25fMV8xLmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTAwMCwiaGVpZ2h0IjoxMDAwLCJmaXQiOiJjb250YWluIiwiYmFja2dyb3VuZCI6eyJyIjoyNTUsImciOjI1NSwiYiI6MjU1LCJhbHBoYSI6MX19fX0=",
+    },
+    {
+      name: "Mens LED Digital Wristwatch",
+      price: "2999",
+      rating: "4.2/5★",
+      discount: "UP TO 13% OFF",
+      category: "watch",
+      img: "https://dbnzj30o7hucx.cloudfront.net/eyJidWNrZXQiOiJtZWFuYnV5LWltYWdlcyIsImtleSI6IjE5MzQwXC9CbGFja19uXzFfMS5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxMDAwLCJoZWlnaHQiOjEwMDAsImZpdCI6ImNvbnRhaW4iLCJiYWNrZ3JvdW5kIjp7InIiOjI1NSwiZyI6MjU1LCJiIjoyNTUsImFscGhhIjoxfX19fQ==",
+    },
+    {
+      name: "Mens Luxury Analog Wristwatch",
+      price: "4499",
+      rating: "4.7/5★",
+      discount: "UP TO 41% OFF",
+      category: "watch",
+      img: "https://dbnzj30o7hucx.cloudfront.net/eyJidWNrZXQiOiJtZWFuYnV5LWltYWdlcyIsImtleSI6IjMyMDQ1XC9CbGFja19uXzFfMS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjEwMDAsImhlaWdodCI6MTAwMCwiZml0IjoiY29udGFpbiIsImJhY2tncm91bmQiOnsiciI6MjU1LCJnIjoyNTUsImIiOjI1NSwiYWxwaGEiOjF9fX19",
+    },
+    {
+      name: "Mens Digital Smart Watches",
+      price: "3999",
+      rating: "4.1/5★",
+      discount: "UP TO 18% OFF",
+      category: "watch",
+      img: "https://dbnzj30o7hucx.cloudfront.net/eyJidWNrZXQiOiJtZWFuYnV5LWltYWdlcyIsImtleSI6IjE5Mjg0XC9CbGFja19uXzFfMS5qcGVnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxMDAwLCJoZWlnaHQiOjEwMDAsImZpdCI6ImNvbnRhaW4iLCJiYWNrZ3JvdW5kIjp7InIiOjI1NSwiZyI6MjU1LCJiIjoyNTUsImFscGhhIjoxfX19fQ==",
+    },
+    {
+      name: "TWS LT04 Smart watch",
+      price: "5999",
+      rating: "4.3/5★",
+      discount: "UP TO 18% OFF",
+      category: "watch",
+      img: "https://dbnzj30o7hucx.cloudfront.net/eyJidWNrZXQiOiJtZWFuYnV5LWltYWdlcyIsImtleSI6IjIzMDM3XC9CbGFja19uXzFfMS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjEwMDAsImhlaWdodCI6MTAwMCwiZml0IjoiY29udGFpbiIsImJhY2tncm91bmQiOnsiciI6MjU1LCJnIjoyNTUsImIiOjI1NSwiYWxwaGEiOjF9fX19",
+    },
+    {
+      name: "KOSPET TANK M1 Smartwatch",
+      price: "4999",
+      rating: "4.6/5★",
+      discount: "UP TO 27% OFF",
+      category: "watch",
+      img: "https://dbnzj30o7hucx.cloudfront.net/eyJidWNrZXQiOiJtZWFuYnV5LWltYWdlcyIsImtleSI6IjMyMzg1XC9CbGFja19uXzFfMS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjEwMDAsImhlaWdodCI6MTAwMCwiZml0IjoiY29udGFpbiIsImJhY2tncm91bmQiOnsiciI6MjU1LCJnIjoyNTUsImIiOjI1NSwiYWxwaGEiOjF9fX19",
+    },
+    {
+      name: "Trifold Touch Control Mirror",
+      price: "1699",
+      rating: "4.6/5★",
+      discount: "UP TO 27% OFF",
+      category: "womenMakeup",
+      img: "https://dbnzj30o7hucx.cloudfront.net/eyJidWNrZXQiOiJtZWFuYnV5LWltYWdlcyIsImtleSI6IjMyMDg4XC9XaGl0ZV9uXzFfMS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjEwMDAsImhlaWdodCI6MTAwMCwiZml0IjoiY29udGFpbiIsImJhY2tncm91bmQiOnsiciI6MjU1LCJnIjoyNTUsImIiOjI1NSwiYWxwaGEiOjF9fX19",
+    },
+    {
+      name: "Makeup Mirror Bag",
+      price: "2999",
+      rating: "4.2/5★",
+      discount: "UP TO 10% OFF",
+      category: "womenMakeup",
+      img: "https://dbnzj30o7hucx.cloudfront.net/eyJidWNrZXQiOiJtZWFuYnV5LWltYWdlcyIsImtleSI6IjMyMDg2XC9CbGFja19uXzFfMS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjEwMDAsImhlaWdodCI6MTAwMCwiZml0IjoiY29udGFpbiIsImJhY2tncm91bmQiOnsiciI6MjU1LCJnIjoyNTUsImIiOjI1NSwiYWxwaGEiOjF9fX19",
+    },
+    {
+      name: "Four-Grid Organizer Box",
+      price: "499",
+      rating: "4.1/5★",
+      discount: "UP TO 12% OFF",
+      category: "womenMakeup",
+      img: "https://dbnzj30o7hucx.cloudfront.net/eyJidWNrZXQiOiJtZWFuYnV5LWltYWdlcyIsImtleSI6IjMyMDY1XC9QaW5rX25fMV8xLmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTAwMCwiaGVpZ2h0IjoxMDAwLCJmaXQiOiJjb250YWluIiwiYmFja2dyb3VuZCI6eyJyIjoyNTUsImciOjI1NSwiYiI6MjU1LCJhbHBoYSI6MX19fX0=",
+    },
+    {
+      name: "LED Box With Makeup Mirror",
+      price: "1499",
+      rating: "4.6/5★",
+      discount: "UP TO 27% OFF",
+      category: "womenMakeup",
+      img: "https://dbnzj30o7hucx.cloudfront.net/eyJidWNrZXQiOiJtZWFuYnV5LWltYWdlcyIsImtleSI6IjMyMDY0XC9CbGFja19uXzFfMS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjEwMDAsImhlaWdodCI6MTAwMCwiZml0IjoiY29udGFpbiIsImJhY2tncm91bmQiOnsiciI6MjU1LCJnIjoyNTUsImIiOjI1NSwiYWxwaGEiOjF9fX19",
+    },
+    {
+      name: "Four-in-one Detachable Bag",
+      price: "1299",
+      rating: "4.3/5★",
+      discount: "UP TO 16% OFF",
+      category: "womenMakeup",
+      img: "https://dbnzj30o7hucx.cloudfront.net/eyJidWNrZXQiOiJtZWFuYnV5LWltYWdlcyIsImtleSI6IjMyMDYyXC9CbGFja19uXzFfMS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjEwMDAsImhlaWdodCI6MTAwMCwiZml0IjoiY29udGFpbiIsImJhY2tncm91bmQiOnsiciI6MjU1LCJnIjoyNTUsImIiOjI1NSwiYWxwaGEiOjF9fX19",
+    },
+    {
+      name: "Dual Wireless Mini Bluetooth Earbuds",
+      price: "1899",
+      rating: "4.5/5★",
+      discount: "UP TO 32% OFF",
+      category: "bluetoothEarphone",
+      img: "https://dbnzj30o7hucx.cloudfront.net/eyJidWNrZXQiOiJtZWFuYnV5LWltYWdlcyIsImtleSI6IjMxNDUyXC9CbGFja19uXzFfMS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjEwMDAsImhlaWdodCI6MTAwMCwiZml0IjoiY29udGFpbiIsImJhY2tncm91bmQiOnsiciI6MjU1LCJnIjoyNTUsImIiOjI1NSwiYWxwaGEiOjF9fX19",
+    },
+    {
+      name: "Dual Wireless Mini Bluetooth Earbuds",
+      price: "1899",
+      rating: "4.9/5★",
+      discount: "UP TO 18% OFF",
+      category: "bluetoothEarphone",
+      img: "https://dbnzj30o7hucx.cloudfront.net/eyJidWNrZXQiOiJtZWFuYnV5LWltYWdlcyIsImtleSI6IjIxNjU1XC9CbGFja19uXzFfMS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjEwMDAsImhlaWdodCI6MTAwMCwiZml0IjoiY29udGFpbiIsImJhY2tncm91bmQiOnsiciI6MjU1LCJnIjoyNTUsImIiOjI1NSwiYWxwaGEiOjF9fX19",
+    },
+    {
+      name: "Huawei FreeLace Pro Earphones",
+      price: "9799",
+      rating: "4.1/5★",
+      discount: "UP TO 15% OFF",
+      category: "bluetoothEarphone",
+      img: "https://dbnzj30o7hucx.cloudfront.net/eyJidWNrZXQiOiJtZWFuYnV5LWltYWdlcyIsImtleSI6IjMwNTU5XC9CbGFja19uXzFfMS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjEwMDAsImhlaWdodCI6MTAwMCwiZml0IjoiY29udGFpbiIsImJhY2tncm91bmQiOnsiciI6MjU1LCJnIjoyNTUsImIiOjI1NSwiYWxwaGEiOjF9fX19",
+    },
+    {
+      name: "Bone Conduction Earphone",
+      price: "4999",
+      rating: "4.6/5★",
+      discount: "UP TO 27% OFF",
+      category: "bluetoothEarphone",
+      img: "https://dbnzj30o7hucx.cloudfront.net/eyJidWNrZXQiOiJtZWFuYnV5LWltYWdlcyIsImtleSI6IjI3NDE4XC9CbGFja19uXzFfMS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjEwMDAsImhlaWdodCI6MTAwMCwiZml0IjoiY29udGFpbiIsImJhY2tncm91bmQiOnsiciI6MjU1LCJnIjoyNTUsImIiOjI1NSwiYWxwaGEiOjF9fX19",
+    },
+  ];
+</script>
+
+<script>
+  // console.log(product_data)
+  let container = document.getElementById("container");
+
+  let filter = document.querySelector("#filter");
+
+  let cartLS = JSON.parse(localStorage.getItem("cart-page")) || [];
+
+  function display(product_data) {
+    container.innerHTML = "";
+    product_data.forEach(function (elem) {
+      let product = document.createElement("div");
+      let img = document.createElement("img");
+      img.setAttribute("src", elem.img);
+
+      let name = document.createElement("h1");
+      name.innerText = elem.name;
+
+      let rating = document.createElement("button");
+      rating.innerText = elem.rating;
+
+      let price = document.createElement("h3");
+      price.innerText = elem.price;
+
+      let discount = document.createElement("p");
+      discount.innerText = elem.discount;
+
+      let line = document.createElement("hr");
+
+      let cart = document.createElement("button");
+      cart.innerText = "Add to Cart";
+      cart.addEventListener("click", function () {
+        addToCart(elem);
+      });
+
+      product.append(img);
+      product.append(name, rating, price, discount, line, cart);
+      container.append(product);
+    });
+  }
+
+  display(product_data);
+  filter.addEventListener("change", function () {
+    if (filter.value === "") {
+      display(product_data);
+    } else {
+      let filtered = product_data.filter(function (elem) {
+        return elem.category === filter.value;
+      });
+      display(filtered);
+    }
+  });
+
+  function addToCart(product) {
+    for (let i = 0; i < cartLS.length; i++) {
+      if (cartLS[i].img === product.img) {
+        alert("Product already added");
+        return;
+      }
+    }
+    cartLS.push(product);
+    alert("Product added Successfully");
+    // console.log(cartLS);
+    localStorage.setItem("cart-page", JSON.stringify(cartLS));
+  }
+</script>

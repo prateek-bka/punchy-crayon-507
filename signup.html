@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Signup</title>
+  </head>
+  <style>
+    #mid {
+      margin: auto;
+      width: 80%;
+      gap: 5%;
+    }
+
+    button {
+      background-color: rgb(86, 130, 241);
+      color: white;
+    }
+
+    #mid {
+      border: 1px solid rgb(188, 186, 186);
+      display: flex;
+      justify-content: space-between;
+      padding: 1%;
+    }
+
+    input {
+      width: 100%;
+    }
+
+    #left {
+      width: 60%;
+      color: rgb(47, 46, 46);
+      font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+      font-size: large;
+    }
+    #left > div > h3 {
+      color: rgb(169, 115, 16);
+    }
+
+    #right {
+      width: 40%;
+    }
+    #right > div {
+      margin: auto;
+      gap: 3%;
+      font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+      color: rgb(64, 63, 63);
+      font-size: large;
+    }
+
+    #right > div:nth-child(1) {
+      border: 1px solid rgb(171, 169, 169);
+      padding: 2%;
+    }
+
+    #right > div:nth-child(2) {
+      text-align: center;
+      font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+      color: rgb(59, 55, 55);
+    }
+
+    #right > div > img {
+      margin: auto;
+      width: 20%;
+    }
+
+    #right > div > h4 {
+      text-align: center;
+      font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+      color: rgb(64, 63, 63);
+    }
+
+    #header_top {
+      display: flex;
+      justify-content: space-evenly;
+    }
+    #header_img {
+      width: 150px;
+      height: 75px;
+    }
+    p {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      color: rgb(93, 90, 90);
+    }
+
+    .header_bottom_menu {
+      color: rgb(73, 73, 73);
+      font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+      text-decoration: none;
+      margin: auto;
+      margin-left: 3%;
+    }
+
+    #footer {
+      margin: auto;
+      margin-top: 1%;
+      background-color: rgb(235, 229, 229);
+      display: flex;
+      justify-content: space-evenly;
+    }
+
+    #footer > div {
+      width: 60%;
+      font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+      font-size: small;
+      color: rgb(53, 51, 51);
+    }
+    #footer > div > img {
+      margin-top: 40%;
+      width: 100%;
+    }
+
+    #footer > div > h5 {
+      color: rgb(255, 132, 0);
+      font-size: large;
+      margin-bottom: -1%;
+    }
+
+    /* Medium Screens */
+    @media all and (min-width: 768px) and (max-width: 1024px) {
+      body {
+        width: 100%;
+        margin: auto;
+      }
+
+      #footer {
+        width: 85%;
+        display: grid;
+        grid-template-columns: repeat(2, 40%);
+        grid-template-rows: auto;
+
+        margin: auto;
+      }
+    }
+
+    /* Small Screens */
+    @media all and (min-width: 320px) and (max-width: 767px) {
+      body {
+        width: 100%;
+        margin: auto;
+      }
+      #mid {
+        display: block;
+      }
+
+      #mid > div {
+        margin: auto;
+      }
+      #footer {
+        width: 85%;
+        display: grid;
+        grid-template-columns: repeat(2, 40%);
+        grid-template-rows: auto;
+        margin: auto;
+      }
+    }
+  </style>
+
+  <body>
+    <div id="header">
+      <div id="header_top">
+        <div>
+          <img
+            id="header_img"
+            src="https://d64lkarmo2mrq.cloudfront.net/baselogo.png"
+            alt=""
+          />
+        </div>
+
+        <div>
+          <input
+            type="text"
+            placeholder="Search"
+            style="padding: 3%; width: 150%; margin-top: 15%; margin-left: -50%"
+          />
+        </div>
+
+        <div>
+          <p>
+            Seller's Corner | Feedback | Blog | Delivery Info |
+            <a style="color: blue; text-decoration: none" href="./cart.html"
+              >Cart</a
+            >
+          </p>
+        </div>
+      </div>
+
+      <div id="header_bottom">
+        <a href="" class="header_bottom_menu">Categories</a>
+        <a href="" class="header_bottom_menu">Flash Sale</a>
+        <a href="" class="header_bottom_menu">Best Deals</a>
+        <a href="./index1.html" class="header_bottom_menu" style="color: blue"
+          >Trending</a
+        >
+        <a href="" class="header_bottom_menu">New Arrivals </a>
+      </div>
+    </div>
+
+    <div id="mid">
+      <div id="left">
+        <div>
+          <h3>Login or Create Account</h3>
+          <button>Login with Google</button>
+          <button>Login with Facebook</button>
+        </div>
+        <hr />
+        <div>
+          <form>
+            <h4>Email Address</h4>
+            <input type="text" id="email" placeholder="Enter Email Address" />
+            <h4>Password</h4>
+            <input type="password" id="password" placeholder="Enter Password" />
+            <h4>Confirm Password</h4>
+            <input
+              type="Password"
+              id="confirmPassword"
+              placeholder="Confirm Password"
+            />
+
+            <input
+              type="submit"
+              value="Signup"
+              style="
+                display: block;
+                background-color: orange;
+                color: white;
+                border: 0;
+                padding: 1%;
+                width: 100%;
+                margin-top: 1%;
+              "
+            />
+          </form>
+          <br />
+          <a
+            href="login.html"
+            style="
+              margin-left: 35%;
+              font-size: small;
+              color: rgb(164, 158, 158);
+            "
+            >Already have a MeanBuy Account? Log In!</a
+          >
+          <p style="text-align: center; font-size: small">
+            By signing up, you agree to our Terms of Use & Privacy Policy
+          </p>
+        </div>
+      </div>
+      <div id="right">
+        <div>
+          <h4>Cart Details</h4>
+          <hr />
+          <h5>Total Items: XXX</h5>
+          <h5>Sub Total: XXX</h5>
+          <hr />
+          <h5>Cart Total: XXX</h5>
+          <button
+            style="
+              background-color: white;
+              color: orange;
+              border-color: orange;
+              width: 100%;
+              padding: 1%;
+            "
+          >
+            EDIT CART
+          </button>
+        </div>
+
+        <div>
+          <img
+            src="https://www.meanbuy.com/assets/img/india/logo/logo_main.png"
+            alt=""
+          />
+          <h4>Our Shop. Your Price.</h4>
+          <h6>Feel the power to buy at your price.</h6>
+        </div>
+      </div>
+    </div>
+
+    <div id="footer">
+      <div>
+        <h5>Our Policies</h5>
+        <p>Covid-19 Precautions</p>
+        <p>Our Promise</p>
+        <p>Terms & Conditions</p>
+        <p>Customer tarrifs and fees</p>
+        <p>Privacy Policy</p>
+      </div>
+      <div>
+        <h5>Corporate</h5>
+        <p>Sell with us</p>
+        <p>Carrer Opportunities</p>
+        <p>Our Blog</p>
+        <p>Sitemap</p>
+      </div>
+      <div>
+        <h5>Help</h5>
+        <p>How MeanBuy works</p>
+        <p>My orders</p>
+        <p>Exchanges, Returns and Refunds</p>
+        <p>Contact Us</p>
+        <p>FAQ</p>
+      </div>
+      <div>
+        <h5>States Covered</h5>
+        <p>Tamil Nadu</p>
+        <p>Karnataka</p>
+        <p>Mahrashtra</p>
+        <p>Kerala</p>
+        <p>West Bengal</p>
+        <p>Telangana</p>
+        <p>Andhra Pradesh</p>
+      </div>
+      <div>
+        <h5>Sell with us</h5>
+        <p>General Information</p>
+        <p>Signup</p>
+      </div>
+      <div>
+        <img
+          src="https://www.nicepng.com/png/full/110-1105871_our-payment-methods-secure-payment-by-paypal-png.png"
+          alt=""
+        />
+      </div>
+    </div>
+  </body>
+</html>
+
+<script>
+  let form = document.querySelector("form");
+  let signupLS = JSON.parse(localStorage.getItem("signup")) || [];
+
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
+    let obj = {
+      email: form.email.value,
+      password: form.password.value,
+      confirmPassword: form.confirmPassword.value,
+    };
+    console.log(obj);
+    if (obj.email == "" || obj.password == "") {
+      alert("Field Empty");
+      return;
+    } else if (obj.password == obj.confirmPassword) {
+      signupLS.push(obj);
+      localStorage.setItem("signup", JSON.stringify(signupLS));
+    } else if (obj.password != obj.confirmPassword) {
+      alert("Incorrect Confirm Password");
+      return;
+    }
+  });
+</script>
