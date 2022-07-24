@@ -350,7 +350,9 @@
       return;
     } else if (obj.password == obj.confirmPassword) {
       signupLS.push(obj);
+      alert("Signup Successful");
       localStorage.setItem("signup", JSON.stringify(signupLS));
+      window.location.href = "./signin.html";
     } else if (obj.password != obj.confirmPassword) {
       alert("Incorrect Confirm Password");
       return;
