@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cart</title>
+  </head>
+  <style>
+    body {
+      height: auto;
+      width: 90%;
+      margin: auto;
+    }
+
+    body > div:nth-child(2) {
+      display: flex;
+      justify-content: space-evenly;
+      width: 95%;
+      height: 95%;
+    }
+
+    #container {
+      width: 85%;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: auto;
+      gap: 2%;
+    }
+
+    h1 {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      color: gray;
+      font-size: medium;
+    }
+
+    p {
+      text-align: end;
+    }
+
+    button {
+      background-color: rgb(93, 142, 44);
+      color: white;
+      border: 0;
+      padding: 3%;
+    }
+
+    h4 {
+      color: gray;
+      font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+        "Lucida Sans", Arial, sans-serif;
+    }
+
+    #left {
+      padding: 1%;
+    }
+
+    #left > select {
+      display: block;
+      margin-bottom: 10%;
+    }
+
+    #container > div {
+      box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
+    }
+
+    img {
+      width: 200px;
+      height: 200px;
+    }
+
+    #header_top {
+      display: flex;
+      justify-content: space-evenly;
+    }
+    #header_img {
+      width: 150px;
+      height: 75px;
+    }
+    p {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      color: rgb(93, 90, 90);
+    }
+
+    .header_bottom_menu {
+      color: rgb(73, 73, 73);
+      font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+      text-decoration: none;
+      margin: auto;
+      margin-left: 3%;
+    }
+
+    #footer {
+      margin: auto;
+      margin-top: 1%;
+      background-color: rgb(235, 229, 229);
+      display: flex;
+      justify-content: space-around;
+    }
+
+    #footer {
+      margin-top: 10%;
+    }
+    #footer > div {
+      width: 60%;
+      font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+      font-size: small;
+      color: rgb(53, 51, 51);
+    }
+
+    #footer > div > p {
+      text-align: left;
+    }
+    #footer > div > img {
+      margin-top: 40%;
+      width: 100%;
+    }
+
+    #footer > div > h5 {
+      color: rgb(255, 132, 0);
+      font-size: large;
+      margin-bottom: -1%;
+    }
+
+    /* Medium Screens */
+    @media all and (min-width: 768px) and (max-width: 1024px) {
+      body {
+        width: 90%;
+        margin: auto;
+      }
+      #container {
+        width: auto;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+        gap: 1%;
+      }
+      body > div {
+        display: grid;
+        width: 90%;
+      }
+    }
+
+    /* Small Screens */
+    @media all and (min-width: 320px) and (max-width: 767px) {
+      body {
+        width: 90%;
+        margin: auto;
+      }
+      #container {
+        width: auto;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: auto;
+        gap: 1%;
+      }
+      body > div {
+        display: grid;
+        width: 90%;
+      }
+      #left > select {
+        display: flex;
+        margin: auto;
+      }
+    }
+  </style>
+  <body>
+    <div id="header">
+      <div id="header_top">
+        <div>
+          <img
+            id="header_img"
+            src="https://d64lkarmo2mrq.cloudfront.net/baselogo.png"
+            alt=""
+          />
+        </div>
+
+        <div>
+          <input
+            type="text"
+            placeholder="Search"
+            style="padding: 3%; width: 150%; margin-top: 15%; margin-left: -50%"
+          />
+        </div>
+
+        <div>
+          <p>
+            Seller's Corner | Feedback | Blog | Delivery Info |
+            <a style="color: blue; text-decoration: none" href="./cart.html"
+              >Cart</a
+            >
+          </p>
+        </div>
+      </div>
+
+      <div id="header_bottom">
+        <a href="" class="header_bottom_menu">Categories</a>
+        <a href="" class="header_bottom_menu">Flash Sale</a>
+        <a href="" class="header_bottom_menu">Best Deals</a>
+        <a href="./index1.html" class="header_bottom_menu" style="color: blue"
+          >Trending</a
+        >
+        <a href="" class="header_bottom_menu">New Arrivals </a>
+      </div>
+    </div>
+
+    <div id="container"></div>
+    <div>
+      <h1>Total Cart Value:- <span id="spanID">0</span></h1>
+    </div>
+
+    <div id="footer">
+      <div>
+        <h5>Our Policies</h5>
+        <p>Covid-19 Precautions</p>
+        <p>Our Promise</p>
+        <p>Terms & Conditions</p>
+        <p>Customer tarrifs and fees</p>
+        <p>Privacy Policy</p>
+      </div>
+      <div>
+        <h5>Corporate</h5>
+        <p>Sell with us</p>
+        <p>Carrer Opportunities</p>
+        <p>Our Blog</p>
+        <p>Sitemap</p>
+      </div>
+      <div>
+        <h5>Help</h5>
+        <p>How MeanBuy works</p>
+        <p>My orders</p>
+        <p>Exchanges, Returns and Refunds</p>
+        <p>Contact Us</p>
+        <p>FAQ</p>
+      </div>
+      <div>
+        <h5>States Covered</h5>
+        <p>Tamil Nadu</p>
+        <p>Karnataka</p>
+        <p>Mahrashtra</p>
+        <p>Kerala</p>
+        <p>West Bengal</p>
+        <p>Telangana</p>
+        <p>Andhra Pradesh</p>
+      </div>
+      <div>
+        <h5>Sell with us</h5>
+        <p>General Information</p>
+        <p>Signup</p>
+      </div>
+      <div>
+        <img
+          src="https://www.nicepng.com/png/full/110-1105871_our-payment-methods-secure-payment-by-paypal-png.png"
+          alt=""
+        />
+      </div>
+    </div>
+  </body>
+</html>
+
+<script>
+  // console.log(product_data)
+  let container = document.getElementById("container");
+
+  let cartLS = JSON.parse(localStorage.getItem("cart-page")) || [];
+
+  let totalPrice = document.querySelector("#spanID");
+
+  function display(product_data) {
+    container.innerHTML = "";
+    let total = 0;
+    product_data.forEach(function (elem, index) {
+      total += Number(elem.price);
+      let product = document.createElement("div");
+      let img = document.createElement("img");
+      img.setAttribute("src", elem.img);
+
+      let name = document.createElement("h1");
+      name.innerText = elem.name;
+
+      let rating = document.createElement("button");
+      rating.innerText = elem.rating;
+
+      let price = document.createElement("h3");
+      price.innerText = elem.price;
+
+      let discount = document.createElement("p");
+      discount.innerText = elem.discount;
+
+      let line = document.createElement("hr");
+
+      let deleteBtn = document.createElement("button");
+      deleteBtn.innerText = "Delete";
+      deleteBtn.addEventListener("click", function () {
+        deleteCart(elem);
+      });
+
+      product.append(img);
+      product.append(name, rating, price, discount, line, deleteBtn);
+      container.append(product);
+    });
+    totalPrice.innerText = total;
+  }
+
+  function deleteCart(elem, index) {
+    cartLS.splice(index, 1);
+    localStorage.setItem("cart-page", JSON.stringify(cartLS));
+    display(cartLS);
+  }
+
+  display(cartLS);
+</script>
